@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: python image
+# key: <pyimg
+# --
+#+BEGIN: $1
+#+begin_src python :results output :exports none
+  from matplotlib import pyplot
+  
+  pyplot.savefig('image/$1.png')
+  print('image created: $1')
+#+end_src
+#+RESULTS:
+
+#+caption: $2
+#+LABEL: fig:$1
+[[./image/$1.png]]
+#+END:
