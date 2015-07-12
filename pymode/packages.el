@@ -14,21 +14,21 @@
 ;; which require an initialization must be listed explicitly in the list.
 (setq pymode-packages
       '(
-        python
         python-cell
-        jedi
-        company-jedi
       ;; package names go here
-      ))
+        ))
 
-;; List of packages to exclude.
+
 (setq pymode-excluded-packages '())
+
+(defun pymode/init-python-cell ()
+  (use-package  python-cell
+    :defer t
+    :init(add-hook 'python-mode-hook 'python-cell-mode) ))
 
 ;; For each package, define a function pymode/init-<package-name>
 ;;
-;; (defun pymode/init-my-package ()
-;;   "Initialize my package"
-;;   )
+
 ;;
 ;; Often the body of an initialize function uses `use-package'
 ;; For more info on `use-package', see readme:
