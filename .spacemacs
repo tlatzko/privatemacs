@@ -201,7 +201,7 @@ layers configuration."
   (defun my-org-confirm-babel-evaluate (lang body)
     (not (or (string= lang "C++") (string= lang "python"))))
   (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
-
+  
 
   (eval-after-load "ispell"
     '(add-to-list 'ispell-dictionary-alist
@@ -218,8 +218,8 @@ layers configuration."
       (ispell-change-dictionary change)
       (message "Dictionary switched from %s to %s" dic change)
       ))
+  (global-set-key (kbd "<f8>")   'fd-switch-dictionary)
 
-  
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
