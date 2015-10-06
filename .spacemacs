@@ -25,6 +25,7 @@
      pymode
      latex
      ;;themes-megapack
+     ess
      python
      c-c++
      org
