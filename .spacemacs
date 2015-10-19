@@ -27,6 +27,7 @@
      latex
      rust
      ;;themes-megapack
+     ess
      python
      semantic
      (c-c++ :variables
