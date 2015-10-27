@@ -21,7 +21,7 @@
 ;; List of packages to exclude.
 (setq myspell-excluded-packages '())
 
-(defun spacemacs/init-flyspell ()
+(defun myspell/init-flyspell ()
   (defun enable-flyspell-mode ()
     (flyspell-mode 1))
   (use-package flyspell
