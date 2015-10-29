@@ -24,6 +24,7 @@
      ;; markdown
      pymode
      myspell
+     mykey
      latex
      rust
      ;;themes-megapack
