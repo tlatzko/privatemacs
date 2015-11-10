@@ -32,7 +32,7 @@
       (key-chord-define-global "vg"     'eval-region)
       (key-chord-define-global "vb"     'eval-buffer)
       (key-chord-define-global "cy"     'yank-pop)
-
+      (key-chord-define-global "qs"     'query-replace)
                                         ; frame actions
                                         ; (key-chord-define-global "nn"     'other-window);
                                         ; (key-chord-define-global "b1"     'delete-other-windows)

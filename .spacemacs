@@ -33,11 +33,13 @@
      semantic
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
-            c-c++-enable-clang-support t)
+            c-c++-enable-clang-support t
+            flycheck-clang-language-standard "c++11")
      org
      (shell :variables
             shell-default-height 5
-            shell-default-position 'bottom)
+            shell-default-position 'bottom
+            )
      syntax-checking
      version-control
      )
