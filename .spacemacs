@@ -23,15 +23,25 @@
      ;; git
      ;; markdown
      pymode
+     myspell
+     mykey
      latex
+     rust
+
      ;;themes-megapack
+     vim-powerline
      ess
      python
-     c-c++
+     semantic
+     (c-c++ :variables
+            c-c++-default-mode-for-headers 'c++-mode
+            c-c++-enable-clang-support t
+            flycheck-clang-language-standard "c++11")
      org
      (shell :variables
             shell-default-height 5
-            shell-default-position 'bottom)
+            shell-default-position 'bottom
+            )
      syntax-checking
      version-control
      )
@@ -85,7 +95,7 @@ before layers configuration."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 10
+                               :size 15
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -175,9 +185,7 @@ layers configuration."
   (setq ad-redefinition-action 'accept)
   ;; Bind clang-format-region to C-M-tab in all modes:
   (global-set-key [C-M-tab] 'clang-format-region)
-  ;; enable clang bindings
-  (setq-default dotspacemacs-configuration-layers
-                '((c-c++ :variables c-c++-enable-clang-support t)))
+  (setq word-wrap t)
   ;; Bind clang-format-buffer to tab on the c++-mode only:
   (add-hook 'c++-mode-hook 'clang-format-bindings)
   (defun clang-format-bindings ()
@@ -205,25 +213,8 @@ layers configuration."
     (not (or (string= lang "C++") (string= lang "python"))))
   (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
   
-
-  (eval-after-load "ispell"
-    '(add-to-list 'ispell-dictionary-alist
-                  '("deutsch8"
-                    "[a-zA-ZäöüßÄÖÜ]" "[^a-zA-ZäöüßÄÖÜ]" "[']" t
-                    ("-C" "-d" "de_DE-neu.multi")
-                    "~latin1" iso-8859-1)))
-
-  ;; switch from german to english for the dictionary
-  (defun fd-switch-dictionary()
-    (interactive)
-    (let* ((dic ispell-current-dictionary)
-           (change (if (string= dic "deutsch8") "english" "deutsch8")))
-      (ispell-change-dictionary change)
-      (message "Dictionary switched from %s to %s" dic change)
-      ))
-  (global-set-key (kbd "<f8>")   'fd-switch-dictionary)
-
   )
+  
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
@@ -236,17 +227,23 @@ layers configuration."
  '(ahs-idle-interval 0.25)
  '(ahs-idle-timer 0 t)
  '(ahs-inhibit-face-list nil)
+ '(ansi-color-names-vector
+   ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(blink-cursor-mode nil)
  '(column-number-mode t)
+ '(custom-safe-themes
+   (quote
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(menu-bar-mode nil)
  '(org-agenda-files nil)
  '(ring-bell-function (quote ignore) t)
  '(tool-bar-mode nil))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Source Code Pro" :foundry "adobe" :slant normal :weight normal :height 83 :width normal))))
+ '(default ((t (:family "Source Code Pro" :foundry "adobe" :slant normal :weight normal :height 75 :width normal))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
