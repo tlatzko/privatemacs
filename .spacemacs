@@ -163,12 +163,14 @@ before layers configuration."
   ;; User initialization goes here
   )
 
-(defun dotspacemacs/config ()
+(defun dotspacemacs/user-config ()
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
   ;; Line number
   (global-hl-line-mode -1)
+  (setq mac-option-key-is-meta t)
+  (setq mac-right-option-modifier nil)
   (global-linum-mode 1)
   (setq ad-redefinition-action 'accept)
   ;; Bind clang-format-region to C-M-tab in all modes:
