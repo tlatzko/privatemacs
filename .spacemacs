@@ -26,7 +26,7 @@
      myspell
      mykey
      latex
-     rust
+     ; rust
      ;;themes-megapack
      vim-powerline
      ess
@@ -178,6 +178,8 @@ before layers configuration."
 layers configuration."
   ;; Line number
   (global-hl-line-mode -1)
+  (setq mac-option-key-is-meta t)
+  (setq mac-right-option-modifier nil)
   (global-linum-mode 1)
   (setq ad-redefinition-action 'accept)
   ;; Bind clang-format-region to C-M-tab in all modes:

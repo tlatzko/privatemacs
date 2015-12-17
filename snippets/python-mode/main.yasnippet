@@ -1,0 +1,29 @@
+# -*- mode: snippet -*-
+# name: main
+# key: main
+# --
+#!/usr/bin/env python
+
+"""
+Author(s): Thomas Latzo
+
+$1
+"""
+
+import os
+import argparse
+
+
+HELP_TEXT = """$2 """
+
+
+def main():
+    parser = argparse.ArgumentParser(description=HELP_TEXT)
+    # parser.add_argument("", help="")
+    # parser.add_argument("-j", type=int, default=1, help="number")
+    $3
+    args = parser.parse_args()   
+
+
+if __name__ == "__main__":
+    main()
