@@ -20,15 +20,14 @@
      auto-completion
      ;; better-defaults
      emacs-lisp
-     ;; git
+     git
      ;; markdown
      pymode
      myspell
      mykey
      latex
-     rust
-
-     ;;themes-megapack
+     ;; rust
+     ;; themes-megapack
      vim-powerline
      ess
      python
@@ -66,7 +65,7 @@ before layers configuration."
   (setq-default
    ;; Either `vim' or `emacs'. Evil is always enabled but if the variable
    ;; is `emacs' then the `holy-mode' is enabled at startup.
-   dotspacemacs-editing-style 'emacs
+   dotspacemacs-editing-style 'vim
    ;; If non nil output loading progress in `*Messages*' buffer.
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays
@@ -82,20 +81,20 @@ before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(wombat
+   dotspacemacs-themes '(monokai
+                         wombat
                          solarized-light
                          solarized-dark
                          spacemacs-light
                          spacemacs-dark
                          leuven
-                         monokai
-                          zenburn)
+                         zenburn)
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 15
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -214,7 +213,6 @@ layers configuration."
   (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
   
   )
-  
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
