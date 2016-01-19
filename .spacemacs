@@ -26,6 +26,7 @@
      myspell
      mykey
      latex
+     gtags
      ;; rust
      ;; themes-megapack
      vim-powerline
