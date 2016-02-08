@@ -20,20 +20,16 @@
      auto-completion
      ;; better-defaults
      emacs-lisp
-     git
+     ;; git
      ;; markdown
      pymode
-     myspell
+     ;; myspell
      mykey
-     latex
-<<<<<<< HEAD
+     ;; latex
      gtags
      ;; rust
      ;; themes-megapack
-=======
      ; rust
-     ;;themes-megapack
->>>>>>> b4f65812490d3cee4510e6b163e518678a19aea4
      vim-powerline
      ess
      python
@@ -100,11 +96,7 @@ before layers configuration."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-<<<<<<< HEAD
-                               :size 14
-=======
-                               :size 11
->>>>>>> b4f65812490d3cee4510e6b163e518678a19aea4
+                               :size 12
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
